@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { WaitlistForm } from "@/components/waitlist-form";
 
 const BMC_MONTHLY = "https://buymeacoffee.com/waafi/membership";
 const BMC_ONE_TIME = "https://buymeacoffee.com/waafi";
@@ -97,23 +98,19 @@ export default function HomePage() {
               <p className="mt-2 text-sm sm:text-base text-faint">
                 Free, forever, no paywalls.
               </p>
-              <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <button
-                  disabled
-                  className="px-6 py-3 rounded-xl bg-card border border-border text-muted font-semibold cursor-not-allowed"
-                  title="Coming soon"
-                >
-                  Coming to App Store
-                </button>
-                <a
-                  href={BMC_MONTHLY}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-xl bg-foreground text-background font-semibold transition hover:opacity-90 inline-flex items-center justify-center gap-2"
-                >
-                  <HeartIcon className="w-4 h-4" />
-                  Support the Mission
-                </a>
+              <div className="mt-7 w-full max-w-md">
+                <WaitlistForm />
+                <p className="mt-5 text-sm text-muted">
+                  Already love what we&apos;re building?{" "}
+                  <a
+                    href={BMC_MONTHLY}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground font-semibold underline underline-offset-2 hover:opacity-80"
+                  >
+                    Support the mission →
+                  </a>
+                </p>
               </div>
             </div>
 
