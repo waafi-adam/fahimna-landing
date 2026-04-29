@@ -59,7 +59,7 @@ function PhoneScreenshot({
 }) {
   return (
     <div
-      className={`rounded-[2.5rem] overflow-hidden border border-border shadow-2xl bg-card ${className}`}
+      className={`rounded-[2.5rem] overflow-hidden border border-border bg-card shadow-2xl dark:shadow-[0_0_80px_-10px_rgba(129,140,248,0.45),0_0_30px_-10px_rgba(129,140,248,0.3)] ${className}`}
     >
       <Image
         src={src}
