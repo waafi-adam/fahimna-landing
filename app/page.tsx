@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-const BMC_MONTHLY = "https://buymeacoffee.com/fahimna/membership";
-const BMC_ONE_TIME = "https://buymeacoffee.com/fahimna";
+const BMC_URL = "https://buymeacoffee.com/fahimna";
 
 const FEATURES = [
   {
@@ -103,7 +102,7 @@ export default function HomePage() {
                 <p className="mt-5 text-sm text-muted">
                   Already love what we&apos;re building?{" "}
                   <a
-                    href={BMC_MONTHLY}
+                    href={BMC_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground font-semibold underline underline-offset-2 hover:opacity-80"
@@ -273,7 +272,7 @@ export default function HomePage() {
                 Every supporter buys back hours I&apos;d otherwise spend at a day job — translated directly into building. More features, faster, in more languages, for more Muslims.
               </p>
               <a
-                href={BMC_MONTHLY}
+                href={BMC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-foreground text-background font-semibold transition hover:opacity-90 inline-flex items-center gap-2"
@@ -290,24 +289,14 @@ export default function HomePage() {
         <footer className="px-6 py-12 border-t border-border">
           <div className="mx-auto max-w-3xl flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted">
             <p>© {new Date().getFullYear()} Fahimna. JazakAllah khayran.</p>
-            <div className="flex gap-6">
-              <a
-                href={BMC_MONTHLY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition"
-              >
-                Support monthly
-              </a>
-              <a
-                href={BMC_ONE_TIME}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition"
-              >
-                One-time
-              </a>
-            </div>
+            <a
+              href={BMC_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition"
+            >
+              Support Fahimna
+            </a>
           </div>
         </footer>
       </main>
@@ -315,7 +304,7 @@ export default function HomePage() {
       {/* Sticky bottom CTA — mobile only */}
       <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden">
         <a
-          href={BMC_MONTHLY}
+          href={BMC_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full py-3 rounded-xl bg-foreground text-background font-semibold flex items-center justify-center gap-2"
