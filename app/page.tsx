@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-const BMC_MONTHLY = "https://buymeacoffee.com/waafi/membership";
-const BMC_ONE_TIME = "https://buymeacoffee.com/waafi";
+const BMC_MONTHLY = "https://buymeacoffee.com/fahimna/membership";
+const BMC_ONE_TIME = "https://buymeacoffee.com/fahimna";
 
 const FEATURES = [
   {
