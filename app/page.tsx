@@ -90,7 +90,7 @@ export default function HomePage() {
               <p className="mt-3 text-base sm:text-xl text-muted max-w-xl">
                 Finally understand the Quran — word by word, verse by verse.
               </p>
-              <div id="waitlist" className="mt-7 w-full max-w-md scroll-mt-8">
+              <div className="mt-7 w-full max-w-md">
                 <WaitlistForm />
                 <p className="mt-5 text-sm text-muted">
                   Already love what we&apos;re building?{" "}
@@ -201,12 +201,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Sadaqah Jariah */}
+        {/* Ongoing reward */}
         <section className="px-6 py-16 sm:py-20 border-t border-border">
           <div className="mx-auto max-w-2xl">
             <div className="p-8 sm:p-10 rounded-3xl bg-accent-bg">
               <p className="text-xs font-bold tracking-wider text-accent mb-4 text-center">
-                YOUR ISLAMIC REWARD
+                YOUR ONGOING REWARD
               </p>
               <p
                 className="text-3xl sm:text-4xl text-center mb-6 text-foreground"
@@ -215,10 +215,10 @@ export default function HomePage() {
                 صَدَقَةٌ جَارِيَةٌ
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-muted mb-4">
-                The Prophet ﷺ said: &ldquo;When a person dies, their deeds come to an end except for three — ongoing charity (sadaqah jariah), knowledge that benefits others, or a righteous child who prays for them.&rdquo;
+                The Prophet ﷺ said: &ldquo;When a person dies, their deeds come to an end except for three — ongoing charity, knowledge that benefits others, or a righteous child who prays for them.&rdquo;
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-muted">
-                Every time a Muslim opens Fahimna and connects with the Quran, you share in that reward — even after you&apos;re gone. Supporting this mission is an act of worship.
+                Fahimna is knowledge that benefits others. Every Muslim who opens it and finally understands an ayah of the Quran — your support is woven into that. Your share of the reward keeps growing, long after this life.
               </p>
             </div>
           </div>
@@ -295,7 +295,7 @@ export default function HomePage() {
       {/* Sticky bottom CTA — mobile only */}
       <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden flex gap-2">
         <a
-          href="#waitlist"
+          href="#top"
           className="flex-1 py-3 rounded-xl bg-foreground text-background font-semibold flex items-center justify-center text-sm"
         >
           Notify me
