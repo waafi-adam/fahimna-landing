@@ -88,14 +88,7 @@ export default function HomePage() {
                 Fahimna
               </h1>
               <p className="mt-3 text-base sm:text-xl text-muted max-w-xl">
-                Arabic for{" "}
-                <span className="text-foreground font-semibold">
-                  &ldquo;we understood.&rdquo;
-                </span>{" "}
                 Finally understand the Quran — word by word, verse by verse.
-              </p>
-              <p className="mt-2 text-sm sm:text-base text-faint">
-                Free, forever, no paywalls.
               </p>
               <div className="mt-7 w-full max-w-md">
                 <WaitlistForm />
@@ -107,7 +100,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="text-foreground font-semibold underline underline-offset-2 hover:opacity-80"
                   >
-                    Support the mission →
+                    Support Fahimna →
                   </a>
                 </p>
               </div>
@@ -254,22 +247,21 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Founder note */}
+        {/* Why support */}
         <section className="px-6 py-16 sm:py-20 border-t border-border">
           <div className="mx-auto max-w-2xl">
             <div className="flex flex-col items-center text-center">
-              {/* Photo placeholder — drop a square image at /public/waafi.jpg and swap this for <Image /> */}
-              <div className="w-28 h-28 rounded-full bg-card border-2 border-accent-bg flex items-center justify-center text-3xl font-bold text-accent mb-6 overflow-hidden">
-                WA
-              </div>
               <p className="text-xs font-semibold tracking-wider text-accent mb-3">
-                A NOTE FROM THE FOUNDER
+                WHY SUPPORT FAHIMNA
               </p>
-              <p className="text-base sm:text-lg leading-relaxed text-foreground mb-4">
-                I built Fahimna because I wanted my own relationship with the Quran to be more than recitation — and I knew I wasn&apos;t alone in that.
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">
+                Support keeps Fahimna growing — with intention.
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed text-muted mb-4">
+                Your support means new features get built on a steady, planned roadmap instead of in stolen moments — and the app stays maintained as more Muslims rely on it.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed text-muted mb-6">
-                Every supporter buys back hours I&apos;d otherwise spend at a day job — translated directly into building. More features, faster, in more languages, for more Muslims.
+              <p className="text-base sm:text-lg leading-relaxed text-muted mb-8">
+                In the future, monthly supporters will unlock exclusive AI-powered features — comprehension checks, deeper analysis, conversational practice — features that cost real money to run for every user. Free users will still get a limited daily quota, so the heart of Fahimna stays open to every Muslim.
               </p>
               <a
                 href={BMC_URL}
@@ -280,7 +272,6 @@ export default function HomePage() {
                 <HeartIcon className="w-4 h-4" />
                 Support Fahimna
               </a>
-              <p className="mt-6 text-sm italic text-faint">— Waafi Adam</p>
             </div>
           </div>
         </section>
@@ -302,12 +293,13 @@ export default function HomePage() {
       </main>
 
       {/* Sticky bottom CTA — mobile only */}
-      <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden">
+      <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden space-y-2">
+        <WaitlistForm />
         <a
           href={BMC_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full py-3 rounded-xl bg-foreground text-background font-semibold flex items-center justify-center gap-2"
+          className="w-full py-2.5 rounded-xl border border-border bg-card text-foreground font-medium flex items-center justify-center gap-2 text-sm"
         >
           <HeartIcon className="w-4 h-4" />
           Support Fahimna

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://fahimna.com"),
   title: "Fahimna — Understand the Quran, word by word",
   description:
-    "Fahimna is Arabic for “we understood.” A free Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards. Free, forever, no paywalls.",
+    "Fahimna is Arabic for “we understood.” A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
   keywords: [
     "Quran",
     "learn Arabic",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fahimna — Understand the Quran, word by word",
     description:
-      "A free Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards. Free, forever, no paywalls.",
+      "A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
     url: "https://fahimna.com",
     siteName: "Fahimna",
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fahimna — Understand the Quran, word by word",
     description:
-      "A free Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
+      "A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
   },
   robots: {
     index: true,
