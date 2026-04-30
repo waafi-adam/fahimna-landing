@@ -1,7 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import { WaitlistForm } from "@/components/waitlist-form";
-
-const BMC_URL = "https://buymeacoffee.com/fahimna";
 
 const FEATURES = [
   {
@@ -94,14 +93,12 @@ export default function HomePage() {
                 <WaitlistForm />
                 <p className="mt-5 text-sm text-muted">
                   Already love what we&apos;re building?{" "}
-                  <a
-                    href={BMC_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/support"
                     className="text-foreground font-semibold underline underline-offset-2 hover:opacity-80"
                   >
                     Support Fahimna →
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -148,7 +145,7 @@ export default function HomePage() {
               WHAT FAHIMNA DOES
             </p>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-center mb-14">
-              Built for understanding, not memorization.
+              Understand what you&apos;ve been reciting.
             </h2>
             <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
               {FEATURES.map((f) => (
@@ -201,29 +198,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Ongoing reward */}
-        <section className="px-6 py-16 sm:py-20 border-t border-border">
-          <div className="mx-auto max-w-2xl">
-            <div className="p-8 sm:p-10 rounded-3xl bg-accent-bg">
-              <p className="text-xs font-bold tracking-wider text-accent mb-4 text-center">
-                YOUR ONGOING REWARD
-              </p>
-              <p
-                className="text-3xl sm:text-4xl text-center mb-6 text-foreground"
-                style={{ lineHeight: "1.6" }}
-              >
-                صَدَقَةٌ جَارِيَةٌ
-              </p>
-              <p className="text-sm sm:text-base leading-relaxed text-muted mb-4">
-                The Prophet ﷺ said: &ldquo;When a person dies, their deeds come to an end except for three — ongoing charity, knowledge that benefits others, or a righteous child who prays for them.&rdquo;
-              </p>
-              <p className="text-sm sm:text-base leading-relaxed text-muted">
-                Fahimna is knowledge that benefits others. Every Muslim who opens it and finally understands an ayah of the Quran — your support is woven into that. Your share of the reward keeps growing, long after this life.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Roadmap */}
         <section className="px-6 py-16 sm:py-20 border-t border-border">
           <div className="mx-auto max-w-3xl">
@@ -231,7 +205,7 @@ export default function HomePage() {
               ON THE ROADMAP
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-12">
-              What your support unlocks.
+              What&apos;s coming next.
             </h2>
             <ul className="space-y-3">
               {ROADMAP.map((item) => (
@@ -247,47 +221,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why support */}
-        <section className="px-6 py-16 sm:py-20 border-t border-border">
-          <div className="mx-auto max-w-2xl">
-            <div className="flex flex-col items-center text-center">
-              <p className="text-xs font-semibold tracking-wider text-accent mb-3">
-                WHY SUPPORT FAHIMNA
-              </p>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">
-                Support keeps Fahimna growing — with intention.
-              </h2>
-              <p className="text-base sm:text-lg leading-relaxed text-muted mb-4">
-                Your support means new features get built on a steady, planned roadmap instead of in stolen moments — and the app stays maintained as more Muslims rely on it.
-              </p>
-              <p className="text-base sm:text-lg leading-relaxed text-muted mb-8">
-                In the future, monthly supporters may unlock exclusive AI-powered features — comprehension checks, deeper analysis, conversational practice — things that cost real money to run for every user. The heart of Fahimna stays open to every Muslim, with a limited daily quota for everyone.
-              </p>
-              <a
-                href={BMC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-foreground text-background font-semibold transition hover:opacity-90 inline-flex items-center gap-2"
-              >
-                <HeartIcon className="w-4 h-4" />
-                Support Fahimna
-              </a>
-            </div>
-          </div>
-        </section>
-
         {/* Footer */}
         <footer className="px-6 py-12 border-t border-border">
           <div className="mx-auto max-w-3xl flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted">
             <p>© {new Date().getFullYear()} Fahimna. JazakAllah khayran.</p>
-            <a
-              href={BMC_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-foreground transition"
-            >
+            <Link href="/support" className="hover:text-foreground transition">
               Support Fahimna
-            </a>
+            </Link>
           </div>
         </footer>
       </main>
@@ -300,15 +240,13 @@ export default function HomePage() {
         >
           Notify me
         </a>
-        <a
-          href={BMC_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/support"
           className="flex-1 py-3 rounded-xl border border-border bg-card text-foreground font-semibold flex items-center justify-center gap-2 text-sm"
         >
           <HeartIcon className="w-4 h-4" />
           Support
-        </a>
+        </Link>
       </div>
     </>
   );
