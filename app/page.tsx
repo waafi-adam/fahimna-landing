@@ -90,7 +90,7 @@ export default function HomePage() {
               <p className="mt-3 text-base sm:text-xl text-muted max-w-xl">
                 Finally understand the Quran — word by word, verse by verse.
               </p>
-              <div className="mt-7 w-full max-w-md">
+              <div id="waitlist" className="mt-7 w-full max-w-md scroll-mt-8">
                 <WaitlistForm />
                 <p className="mt-5 text-sm text-muted">
                   Already love what we&apos;re building?{" "}
@@ -261,7 +261,7 @@ export default function HomePage() {
                 Your support means new features get built on a steady, planned roadmap instead of in stolen moments — and the app stays maintained as more Muslims rely on it.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-muted mb-8">
-                In the future, monthly supporters will unlock exclusive AI-powered features — comprehension checks, deeper analysis, conversational practice — features that cost real money to run for every user. Free users will still get a limited daily quota, so the heart of Fahimna stays open to every Muslim.
+                In the future, monthly supporters may unlock exclusive AI-powered features — comprehension checks, deeper analysis, conversational practice — things that cost real money to run for every user. The heart of Fahimna stays open to every Muslim, with a limited daily quota for everyone.
               </p>
               <a
                 href={BMC_URL}
@@ -293,16 +293,21 @@ export default function HomePage() {
       </main>
 
       {/* Sticky bottom CTA — mobile only */}
-      <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden space-y-2">
-        <WaitlistForm />
+      <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden flex gap-2">
+        <a
+          href="#waitlist"
+          className="flex-1 py-3 rounded-xl bg-foreground text-background font-semibold flex items-center justify-center text-sm"
+        >
+          Notify me
+        </a>
         <a
           href={BMC_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full py-2.5 rounded-xl border border-border bg-card text-foreground font-medium flex items-center justify-center gap-2 text-sm"
+          className="flex-1 py-3 rounded-xl border border-border bg-card text-foreground font-semibold flex items-center justify-center gap-2 text-sm"
         >
           <HeartIcon className="w-4 h-4" />
-          Support Fahimna
+          Support
         </a>
       </div>
     </>
