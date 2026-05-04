@@ -2,29 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-const FEATURES = [
+type Feature = {
+  title: string;
+  body: string;
+  light?: string;
+  dark?: string;
+  alt: string;
+};
+
+const FEATURES: Feature[] = [
   {
     title: "Word-by-word, in context",
     body: "Tap any word to see its meaning. Build understanding atom by atom — not by translating whole verses and hoping it sticks.",
-    image: "/screenshots/reading-wbw-dark.jpg",
+    light: "/screenshots/reading-wbw-light.jpg",
+    dark: "/screenshots/reading-wbw-dark.jpg",
     alt: "Word-by-word reading of Surah Al-Baqarah with each Arabic word translated underneath",
   },
   {
     title: "Deep word analysis",
     body: "Every word: root, pattern, gender, person, part of speech. Understand the grammar, not just the gloss.",
-    image: "/screenshots/word-detail.jpg",
-    alt: "Word detail sheet showing yukhādi'ūna with morphology, root, pattern, and meaning",
+    light: "/screenshots/word-detail-light.jpg",
+    alt: "Word detail sheet showing al-raḥīmi with morphology, part of speech, gender, number, case and state",
   },
   {
     title: "Tafsir, translation & i'rab",
     body: "Sahih International translation alongside classical tafsir, plus full grammatical analysis for every ayah.",
-    image: "/screenshots/ayah-tafsir.jpg",
-    alt: "Translation and tafsir view for Al-Baqarah ayah 9",
+    dark: "/screenshots/ayah-grammar-dark.jpg",
+    alt: "Grammar / iʿrab analysis for the bismillah in Al-Fatihah 1:1",
   },
   {
     title: "Flashcards that stick",
     body: "Mark words you're learning. Fahimna brings them back at the right interval with FSRS spaced repetition — vocabulary becomes part of you.",
-    image: "/screenshots/flashcard-question.jpg",
+    light: "/screenshots/flashcard-question-light.jpg",
+    dark: "/screenshots/flashcard-question-dark.jpg",
     alt: "Flashcard asking what a word family means with a Show Answer button",
   },
 ];
@@ -46,26 +56,54 @@ function HeartIcon({ className = "" }: { className?: string }) {
   );
 }
 
+const FRAME_CLASS =
+  "rounded-[2.5rem] overflow-hidden border border-border bg-card shadow-2xl dark:shadow-[0_0_80px_-10px_rgba(129,140,248,0.45),0_0_30px_-10px_rgba(129,140,248,0.3)]";
+
 function PhoneScreenshot({
-  src,
+  light,
+  dark,
   alt,
   className = "",
 }: {
-  src: string;
+  light?: string;
+  dark?: string;
   alt: string;
   className?: string;
 }) {
+  if (light && dark) {
+    return (
+      <div className={className}>
+        <div className={`${FRAME_CLASS} block dark:hidden`}>
+          <Image
+            src={light}
+            alt={alt}
+            width={1080}
+            height={2400}
+            className="w-full h-auto block"
+          />
+        </div>
+        <div className={`${FRAME_CLASS} hidden dark:block`}>
+          <Image
+            src={dark}
+            alt={alt}
+            width={1080}
+            height={2400}
+            className="w-full h-auto block"
+          />
+        </div>
+      </div>
+    );
+  }
+
+  const src = (light ?? dark)!;
   return (
-    <div
-      className={`rounded-[2.5rem] overflow-hidden border border-border bg-card shadow-2xl dark:shadow-[0_0_80px_-10px_rgba(129,140,248,0.45),0_0_30px_-10px_rgba(129,140,248,0.3)] ${className}`}
-    >
+    <div className={`${FRAME_CLASS} ${className}`}>
       <Image
         src={src}
         alt={alt}
-        width={591}
-        height={1280}
+        width={1080}
+        height={2400}
         className="w-full h-auto block"
-        priority={false}
       />
     </div>
   );
@@ -105,18 +143,12 @@ export default function HomePage() {
 
             {/* Hero screenshot — light/dark swap */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-[280px] sm:max-w-[320px] block dark:hidden">
-                <PhoneScreenshot
-                  src="/screenshots/reading-wbw-light.jpg"
-                  alt="Fahimna app showing word-by-word translation of Surah Al-Baqarah"
-                />
-              </div>
-              <div className="w-full max-w-[280px] sm:max-w-[320px] hidden dark:block">
-                <PhoneScreenshot
-                  src="/screenshots/reading-wbw-dark.jpg"
-                  alt="Fahimna app in dark mode showing word-by-word translation of Surah Al-Baqarah"
-                />
-              </div>
+              <PhoneScreenshot
+                light="/screenshots/reading-wbw-light.jpg"
+                dark="/screenshots/reading-wbw-dark.jpg"
+                alt="Fahimna app showing word-by-word translation of Surah Al-Baqarah"
+                className="w-full max-w-[280px] sm:max-w-[320px]"
+              />
             </div>
           </div>
         </section>
@@ -153,9 +185,12 @@ export default function HomePage() {
                   key={f.title}
                   className="p-6 sm:p-8 rounded-3xl border border-border bg-card flex flex-col items-center gap-6"
                 >
-                  <div className="w-full max-w-[240px]">
-                    <PhoneScreenshot src={f.image} alt={f.alt} />
-                  </div>
+                  <PhoneScreenshot
+                    light={f.light}
+                    dark={f.dark}
+                    alt={f.alt}
+                    className="w-full max-w-[240px]"
+                  />
                   <div className="text-center">
                     <h3 className="text-lg sm:text-xl font-semibold mb-2">
                       {f.title}
@@ -174,12 +209,11 @@ export default function HomePage() {
         <section className="px-6 py-16 sm:py-24 border-t border-border">
           <div className="mx-auto max-w-5xl grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="flex justify-center order-last lg:order-first">
-              <div className="w-full max-w-[260px]">
-                <PhoneScreenshot
-                  src="/screenshots/dashboard.jpg"
-                  alt="Fahimna dashboard showing 56% Quran progress, 2-day streak, and weekly activity chart"
-                />
-              </div>
+              <PhoneScreenshot
+                light="/screenshots/dashboard-light.jpg"
+                alt="Fahimna dashboard showing 39,077 known words, 1-day streak, daily goal progress and weekly activity chart"
+                className="w-full max-w-[260px]"
+              />
             </div>
             <div className="text-center lg:text-left">
               <p className="text-xs font-semibold tracking-wider text-faint mb-3">
@@ -194,6 +228,34 @@ export default function HomePage() {
               <p className="text-base sm:text-lg leading-relaxed text-muted">
                 Daily goals. Streaks. A clear picture of how much of the Book of Allah you can already read with understanding.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Library / Bookmarks */}
+        <section className="px-6 py-16 sm:py-24 border-t border-border">
+          <div className="mx-auto max-w-5xl grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="text-center lg:text-left">
+              <p className="text-xs font-semibold tracking-wider text-faint mb-3">
+                YOUR LIBRARY
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
+                Pick up where you left off.
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed text-muted mb-3">
+                Recently read pages, page bookmarks, ayah bookmarks — all one tap away. Browse by surah, juz, or the spots you&apos;ve marked.
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-muted">
+                Your reading is yours. Pick it up the moment you open the app.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <PhoneScreenshot
+                light="/screenshots/home-bookmarks-light.jpg"
+                dark="/screenshots/home-bookmarks-dark.jpg"
+                alt="Fahimna home screen showing recently read pages and saved bookmarks"
+                className="w-full max-w-[260px]"
+              />
             </div>
           </div>
         </section>
