@@ -22,11 +22,13 @@ const FEATURES: Feature[] = [
     title: "Deep word analysis",
     body: "Every word: root, pattern, gender, person, part of speech. Understand the grammar, not just the gloss.",
     light: "/screenshots/word-detail-light.jpg",
+    dark: "/screenshots/word-detail-dark.jpg",
     alt: "Word detail sheet showing al-raḥīmi with morphology, part of speech, gender, number, case and state",
   },
   {
     title: "Tafsir, translation & i'rab",
     body: "Sahih International translation alongside classical tafsir, plus full grammatical analysis for every ayah.",
+    light: "/screenshots/ayah-grammar-light.jpg",
     dark: "/screenshots/ayah-grammar-dark.jpg",
     alt: "Grammar / iʿrab analysis for the bismillah in Al-Fatihah 1:1",
   },
@@ -211,6 +213,7 @@ export default function HomePage() {
             <div className="flex justify-center order-last lg:order-first">
               <PhoneScreenshot
                 light="/screenshots/dashboard-light.jpg"
+                dark="/screenshots/dashboard-dark.jpg"
                 alt="Fahimna dashboard showing 39,077 known words, 1-day streak, daily goal progress and weekly activity chart"
                 className="w-full max-w-[260px]"
               />
