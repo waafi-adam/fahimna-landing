@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -46,9 +47,14 @@ export default function SupportPage() {
         {/* Hero */}
         <section className="px-6 pt-12 pb-12 sm:pt-16 sm:pb-16">
           <div className="mx-auto max-w-2xl flex flex-col items-center text-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-accent-bg flex items-center justify-center mb-5">
-              <HeartIcon className="w-8 h-8 sm:w-10 sm:h-10 text-accent" />
-            </div>
+            <Image
+              src="/fahimna-logo.svg"
+              alt="Fahimna"
+              width={80}
+              height={80}
+              priority
+              className="w-16 h-16 sm:w-20 sm:h-20 mb-5"
+            />
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">
               Support Fahimna
             </h1>

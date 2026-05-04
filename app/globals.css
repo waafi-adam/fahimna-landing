@@ -9,6 +9,15 @@
   --card: #f9fafb;
   --accent: #4338ca;
   --accent-bg: #e0e7ff;
+
+  /* Word status — light mode uses saturated borders for fills (more pop on
+     light card backgrounds), per onboarding.tsx note. */
+  --status-new: #99ccff;
+  --status-new-strong: #007aff;
+  --status-learning: #ffca99;
+  --status-learning-strong: #ff9500;
+  --status-known-strong: #34c759;
+  --progress-bg: #e5e7eb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +30,15 @@
     --card: #1a1a1a;
     --accent: #818cf8;
     --accent-bg: #1e1b4b;
+
+    /* Dark mode uses the deeper tinted bgs since contrast against dark card
+       is plenty. */
+    --status-new: #0f2647;
+    --status-new-strong: #0a84ff;
+    --status-learning: #3d2400;
+    --status-learning-strong: #ff9f0a;
+    --status-known-strong: #30d158;
+    --progress-bg: #333333;
   }
 }
 
@@ -33,7 +51,16 @@
   --color-card: var(--card);
   --color-accent: var(--accent);
   --color-accent-bg: var(--accent-bg);
+
+  --color-status-new: var(--status-new);
+  --color-status-new-strong: var(--status-new-strong);
+  --color-status-learning: var(--status-learning);
+  --color-status-learning-strong: var(--status-learning-strong);
+  --color-status-known-strong: var(--status-known-strong);
+  --color-progress-bg: var(--progress-bg);
+
   --font-sans: var(--font-geist-sans);
+  --font-arabic: var(--font-arabic);
 }
 
 body {
@@ -46,4 +73,32 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.font-arabic {
+  font-family: var(--font-arabic), "Amiri Quran", "Noto Naskh Arabic",
+    "Traditional Arabic", serif;
+}
+
+@keyframes shake-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.animate-shake-x {
+  animation: shake-x 0.4s ease-in-out;
 }

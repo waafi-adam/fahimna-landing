@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WaitlistForm } from "@/components/waitlist-form";
+import { HeroDemoWithModal } from "@/components/demo/hero-demo";
 
 type Feature = {
   title: string;
@@ -120,9 +121,14 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Copy */}
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-accent-bg flex items-center justify-center mb-5">
-                <HeartIcon className="w-8 h-8 sm:w-10 sm:h-10 text-accent" />
-              </div>
+              <Image
+                src="/fahimna-logo.svg"
+                alt="Fahimna"
+                width={80}
+                height={80}
+                priority
+                className="w-16 h-16 sm:w-20 sm:h-20 mb-5"
+              />
               <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
                 Fahimna
               </h1>
@@ -143,14 +149,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero screenshot — light/dark swap */}
+            {/* Hero — interactive demo (replaces static screenshot) */}
             <div className="flex justify-center lg:justify-end">
-              <PhoneScreenshot
-                light="/screenshots/reading-wbw-light.jpg"
-                dark="/screenshots/reading-wbw-dark.jpg"
-                alt="Fahimna app showing word-by-word translation of Surah Al-Baqarah"
-                className="w-full max-w-[280px] sm:max-w-[320px]"
-              />
+              <HeroDemoWithModal className="w-full max-w-[300px] sm:max-w-[340px]" />
             </div>
           </div>
         </section>
