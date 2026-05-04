@@ -69,6 +69,10 @@ export function SlideFlashcard({
     RATINGS.map(() => 0),
   );
 
+  // Press-down feedback for elements being auto-tapped — briefly scales the
+  // target to ~0.95 before the action lands so the visitor sees a "press".
+  const [showAnswerPressed, setShowAnswerPressed] = useState(false);
+
   // Hint pulse — replays when hintTick changes.
   const [hintPulseKey, setHintPulseKey] = useState(0);
   const lastHintTick = useRef(0);
@@ -88,6 +92,7 @@ export function SlideFlashcard({
       setPickedRating(null);
       setShowAnswerPulse(0);
       setRatingPulses(RATINGS.map(() => 0));
+      setShowAnswerPressed(false);
     };
   }, [active]);
 
@@ -120,10 +125,15 @@ export function SlideFlashcard({
       timeouts.push(t);
     };
 
+    // Press-down on Show Answer just before the action lands.
     schedule(() => {
+      setShowAnswerPressed(true);
       setShowAnswerPulse((n) => n + 1);
-      setShowedAnswer(true);
     }, AUTO_SHOW_ANSWER_AT);
+    schedule(() => {
+      setShowAnswerPressed(false);
+      setShowedAnswer(true);
+    }, AUTO_SHOW_ANSWER_AT + 140);
 
     schedule(() => {
       setRatingPulses((prev) => {
@@ -205,15 +215,16 @@ export function SlideFlashcard({
                 animate={
                   pulseTarget === "show" && hintPulseKey > 0
                     ? hintPulseAnim
-                    : { scale: 1 }
+                    : { scale: showAnswerPressed ? 0.95 : 1 }
                 }
                 key={`show-${hintPulseKey}`}
                 whileTap={mode === "interactive" ? { scale: 0.97 } : undefined}
+                transition={{ duration: 0.16, ease: EASE }}
                 className="relative w-full rounded-xl bg-accent py-3.5 text-center text-base font-bold text-white"
               >
                 Show Answer
                 {mode === "auto" && (
-                  <TapPulse triggered={showAnswerPulse} shape="rect" />
+                  <TapPulse triggered={showAnswerPulse} size={72} />
                 )}
               </motion.button>
             </motion.div>
@@ -286,11 +297,7 @@ export function SlideFlashcard({
                         {r.interval}
                       </span>
                       {mode === "auto" && (
-                        <TapPulse
-                          triggered={ratingPulses[i]}
-                          shape="rect"
-                          color={r.fg}
-                        />
+                        <TapPulse triggered={ratingPulses[i]} size={56} />
                       )}
                     </motion.button>
                   );
