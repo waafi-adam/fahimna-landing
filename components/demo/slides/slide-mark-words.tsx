@@ -125,6 +125,11 @@ export function SlideMarkWords({
       t += 400;
       schedule(t, () => setSheetWordIndex(null));
 
+      // After the sheet finishes its exit animation, reset the shared pulse
+      // counter so the next sheet's "new" pill doesn't auto-fire just because
+      // the trigger value happens to still be > 0 from the previous pick.
+      schedule(t + 250, () => setSheetButtonPulse(0));
+
       // Gap before next word.
       t += 450;
     });
@@ -187,21 +192,14 @@ export function SlideMarkWords({
 
   return (
     <div className="flex flex-col items-center gap-3 w-full">
-      {/* Toggle — wrapped so TapPulse can ripple from the center of the pill
-          in auto, and so we can scale the whole control briefly on auto-tap. */}
+      {/* Toggle — hint pulse is on the wrapper (so the whole control draws
+          attention in interactive mode); the auto-mode tap visually targets
+          ONLY the Learning segment via SegmentToggle's autoTap props. */}
       <motion.div
         animate={{
-          scale: hintTarget === "toggle"
-            ? [1, 1.06, 1, 1.06, 1]
-            : togglePressed
-              ? 0.95
-              : 1,
+          scale: hintTarget === "toggle" ? [1, 1.06, 1, 1.06, 1] : 1,
         }}
-        transition={
-          hintTarget === "toggle"
-            ? { duration: 0.8, ease: EASE }
-            : { duration: 0.16, ease: EASE }
-        }
+        transition={{ duration: 0.8, ease: EASE }}
         className="relative w-[200px]"
       >
         <SegmentToggle
@@ -211,8 +209,10 @@ export function SlideMarkWords({
             setModeIndex(next);
           }}
           disabled={!isInteractive}
+          autoTapTarget={isAuto ? 1 : null}
+          autoTapPulse={togglePulse}
+          autoTapPressed={togglePressed}
         />
-        {isAuto && <TapPulse triggered={togglePulse} size={64} />}
       </motion.div>
 
       {/* Verse card */}
@@ -360,10 +360,19 @@ function SegmentToggle({
   modeIndex,
   onChange,
   disabled,
+  autoTapTarget = null,
+  autoTapPulse = 0,
+  autoTapPressed = false,
 }: {
   modeIndex: Mode;
   onChange: (next: Mode) => void;
   disabled: boolean;
+  /** Which segment (0=Reading, 1=Learning) auto-mode is "tapping". */
+  autoTapTarget?: 0 | 1 | null;
+  /** Bump to fire a TapPulse from the targeted segment's center. */
+  autoTapPulse?: number;
+  /** True briefly while the auto sequence is "pressing" the targeted segment. */
+  autoTapPressed?: boolean;
 }) {
   return (
     <div
@@ -385,19 +394,25 @@ function SegmentToggle({
       />
       {(["Reading", "Learning"] as const).map((label, i) => {
         const selected = modeIndex === i;
+        const isAutoTarget = autoTapTarget === i;
         return (
-          <button
+          <motion.button
             key={label}
             type="button"
             onClick={() => onChange(i as Mode)}
             disabled={disabled}
             aria-pressed={selected}
+            animate={{ scale: isAutoTarget && autoTapPressed ? 0.95 : 1 }}
+            transition={{ duration: 0.16, ease: EASE }}
             className={`relative z-10 flex-1 flex items-center justify-center text-[13px] font-semibold transition-colors duration-200 ${
               selected ? "text-foreground" : "text-muted"
             } ${disabled ? "cursor-default" : "cursor-pointer"}`}
           >
             {label}
-          </button>
+            {isAutoTarget && (
+              <TapPulse triggered={autoTapPulse} size={56} />
+            )}
+          </motion.button>
         );
       })}
     </div>
