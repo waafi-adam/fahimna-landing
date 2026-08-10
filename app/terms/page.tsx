@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 const CONTACT_EMAIL = "abdullah.waafi@gmail.com";
-const LAST_UPDATED = "May 1, 2026";
+const LAST_UPDATED = "August 10, 2026";
 
 export const metadata: Metadata = {
   title: "Terms of Service — Fahimna",
@@ -59,9 +59,12 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold mb-3">Use of the Service</h2>
+              <h2 className="text-xl font-semibold mb-3">The Service and the free tier</h2>
+              <p className="text-muted mb-4">
+                Fahimna is provided for personal, non-commercial use to help you read and understand the Quran. Reading the Quran, listening to recitation, translations, tafsir, and word-by-word grammar are free, and we intend to keep them free. The free tier also includes marking your first 50 words (counted by dictionary word, or &ldquo;lemma&rdquo;) as Learning or Known; Fahimna Premium removes that limit.
+              </p>
               <p className="text-muted">
-                Fahimna is provided for personal, non-commercial use to help you read and understand the Quran. You agree not to misuse the Service — including reverse engineering it for the purpose of redistributing it, attempting to disrupt our infrastructure, or using it to harass or harm others.
+                You agree not to misuse the Service — including reverse engineering it for the purpose of redistributing it, attempting to disrupt our infrastructure, or using it to harass or harm others.
               </p>
             </section>
 
@@ -73,26 +76,39 @@ export default function TermsPage() {
             </section>
 
             <section>
+              <h2 className="text-xl font-semibold mb-3">Accounts</h2>
+              <p className="text-muted">
+                Accounts are optional and are used to sync your progress across devices and to manage Premium. Sign-in works with a one-time code sent to your email, so you are responsible for keeping access to your email account secure. We may suspend or terminate accounts that abuse the Service. You can delete your account at any time in the app (Settings → Data → Delete account).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold mb-3">Fahimna Premium</h2>
+              <p className="text-muted mb-4">
+                Fahimna Premium is available as a monthly or yearly auto-renewing subscription, or as a one-time lifetime purchase. All payments are billed through your Apple App Store or Google Play account — never directly by us. The yearly plan may include a free trial; if it does, the subscription begins when the trial ends unless you cancel before then.
+              </p>
+              <ul className="space-y-2 text-muted list-disc pl-6">
+                <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</li>
+                <li>You can manage or cancel a subscription any time in your App Store or Google Play account settings; cancelling stops future renewals and Premium remains active until the period ends.</li>
+                <li>Refunds are handled by Apple and Google under their own policies — we cannot issue refunds directly.</li>
+                <li>Prices vary by country and are always shown in the store before you confirm a purchase.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold mb-3">Financial assistance</h2>
+              <p className="text-muted">
+                If you cannot afford Premium, you may request free access from within the app. Granted access lasts for a year at our discretion and may be renewed. The program exists so that money is never what stands between anyone and learning the Quran; abuse of it may lead to revocation.
+              </p>
+            </section>
+
+            <section>
               <h2 className="text-xl font-semibold mb-3">Content</h2>
               <p className="text-muted mb-4">
-                The Quran text included in Fahimna is the word of Allah and is not subject to copyright. Translations, tafsir, audio recitations, and other supplementary content are used under the terms of their respective sources or licenses; credit is given in-app where applicable.
+                The Quran text included in Fahimna is the word of Allah and is not subject to copyright — the Quran itself is not sold, and core reading features remain free. Translations, tafsir, audio recitations, and other supplementary content belong to their respective rights holders and are used under the terms of their sources or licenses, for your personal use; credit is given in-app where applicable.
               </p>
               <p className="text-muted">
                 The Fahimna name, logo, app design, code, and original explanatory text are owned by us. You may not copy, redistribute, or sell them without permission.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl font-semibold mb-3">No accounts, no payments</h2>
-              <p className="text-muted">
-                Fahimna does not currently require an account or charge for use. If we add paid features in the future, those will be governed by additional terms presented at the time.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl font-semibold mb-3">Donations</h2>
-              <p className="text-muted">
-                Donations made via Buy Me a Coffee are voluntary. They support development and do not entitle you to any specific feature or service.
               </p>
             </section>
 
@@ -113,7 +129,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold mb-3">Termination</h2>
               <p className="text-muted">
-                You may stop using Fahimna at any time by uninstalling the app. We may suspend or end the Service, in whole or in part, at any time.
+                You may stop using Fahimna at any time by uninstalling the app, and you may delete your account in the app&apos;s settings. We may suspend or end the Service, in whole or in part, at any time; active subscriptions remain governed by your store&apos;s policies.
               </p>
             </section>
 
