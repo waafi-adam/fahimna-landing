@@ -85,7 +85,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold mb-3">Fahimna Premium</h2>
               <p className="text-muted mb-4">
-                Fahimna Premium is available as a monthly or yearly auto-renewing subscription, or as a one-time lifetime purchase. All payments are billed through your Apple App Store or Google Play account — never directly by us. The yearly plan may include a free trial; if it does, the subscription begins when the trial ends unless you cancel before then.
+                Fahimna Premium is available as a monthly or yearly auto-renewing subscription, or as a one-time lifetime purchase. All payments are billed through your Apple App Store or Google Play account — never directly by us. There is no separate free trial: the free tier described above is available to everyone, indefinitely, without payment details.
               </p>
               <ul className="space-y-2 text-muted list-disc pl-6">
                 <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</li>
