@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const CONTACT_EMAIL = "abdullah.waafi@gmail.com";
+const CONTACT_EMAIL = "support@fahimna.app";
 const LAST_UPDATED = "August 10, 2026";
 
 export const metadata: Metadata = {
