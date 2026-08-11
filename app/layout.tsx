@@ -16,7 +16,7 @@ const uthmanicHafs = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fahimna.com"),
+  metadataBase: new URL("https://fahimna.app"),
   title: "Fahimna — Understand the Quran, word by word",
   description:
     "Fahimna is Arabic for “we understood.” A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Fahimna — Understand the Quran, word by word",
     description:
       "A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
-    url: "https://fahimna.com",
+    url: "https://fahimna.app",
     siteName: "Fahimna",
     type: "website",
     images: [
