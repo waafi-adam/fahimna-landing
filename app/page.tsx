@@ -291,9 +291,14 @@ export default function HomePage() {
         <footer className="px-6 py-12 border-t border-border">
           <div className="mx-auto max-w-3xl flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted">
             <p>© {new Date().getFullYear()} Fahimna. JazakAllah khayran.</p>
-            <Link href="/support" className="hover:text-foreground transition">
-              Support Fahimna
-            </Link>
+            <div className="flex gap-6">
+              <Link href="/credits" className="hover:text-foreground transition">
+                Sources &amp; Credits
+              </Link>
+              <Link href="/support" className="hover:text-foreground transition">
+                Support Fahimna
+              </Link>
+            </div>
           </div>
         </footer>
       </main>

@@ -212,6 +212,7 @@ export default function PrivacyPage() {
           <p>© {new Date().getFullYear()} Fahimna.</p>
           <div className="flex gap-6">
             <Link href="/terms" className="hover:text-foreground transition">Terms</Link>
+            <Link href="/credits" className="hover:text-foreground transition">Credits</Link>
             <Link href="/" className="hover:text-foreground transition">Home</Link>
           </div>
         </div>

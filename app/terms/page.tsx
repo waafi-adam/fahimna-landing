@@ -170,6 +170,7 @@ export default function TermsPage() {
           <p>© {new Date().getFullYear()} Fahimna.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-foreground transition">Privacy</Link>
+            <Link href="/credits" className="hover:text-foreground transition">Credits</Link>
             <Link href="/" className="hover:text-foreground transition">Home</Link>
           </div>
         </div>
