@@ -1,1 +1,1 @@
-{"applinks":{"apps":[],"details":[{"appID":"R89S8ZTQKX.com.fahimna.quran","paths":["/ayah/*"]}]}}
+{"applinks":{"apps":[],"details":[{"appIDs":["R89S8ZTQKX.com.fahimna.quran"],"components":[{"/":"/*","comment":"quran.fahimna.app/{surah}/{ayah} — every path on the product host is an ayah link"}],"paths":["*"]}]}}
