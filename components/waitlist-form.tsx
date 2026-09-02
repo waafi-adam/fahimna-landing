@@ -36,7 +36,7 @@ export function WaitlistForm() {
             ? "Joining…"
             : state.status === "success"
               ? "You're in"
-              : "Notify me when it launches"}
+              : "Notify me when Android launches"}
         </button>
       </div>
       {state.status === "error" && (
@@ -51,7 +51,7 @@ export function WaitlistForm() {
       )}
       {state.status === "idle" && (
         <p className="text-xs text-faint">
-          Get an email when Fahimna lands on the App Store. No spam, ever.
+          Fahimna is on the App Store now. Get one email when the Android app lands on Google Play. No spam, ever.
         </p>
       )}
     </form>

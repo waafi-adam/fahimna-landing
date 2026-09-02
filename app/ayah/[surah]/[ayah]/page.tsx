@@ -5,8 +5,7 @@ import type { Metadata } from "next";
 const API = "https://api.quran.com/api/v4";
 const SAHEEH_INTERNATIONAL = 131;
 const MAX_RANGE = 20;
-const APP_STORE_URL = "https://apps.apple.com/app/id6767471815";
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.fahimna.quran";
+import { APP_STORE_URL } from "@/components/store-buttons";
 
 type Params = { surah: string; ayah: string };
 type Search = { to?: string | string[] };
@@ -221,14 +220,14 @@ export default async function AyahPage({ params, searchParams }: PageProps) {
               >
                 App Store
               </a>
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 py-3 px-5 rounded-xl border border-border font-semibold flex items-center justify-center text-sm hover:bg-background transition"
+              {/* Android is in release prep, not yet on Google Play — a pill, not
+                  a link, so nobody lands on a listing that does not exist yet. */}
+              <span
+                className="flex-1 py-3 px-5 rounded-xl border border-dashed border-border text-muted font-semibold flex items-center justify-center text-sm"
+                aria-label="Android version coming soon to Google Play"
               >
-                Google Play
-              </a>
+                Android coming soon
+              </span>
             </div>
           </aside>
         </div>

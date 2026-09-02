@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WaitlistForm } from "@/components/waitlist-form";
+import { StoreButtons, APP_STORE_URL } from "@/components/store-buttons";
 import { HeroDemoWithModal } from "@/components/demo/hero-demo";
 
 type Feature = {
@@ -135,7 +136,11 @@ export default function HomePage() {
               <p className="mt-3 text-base sm:text-xl text-muted max-w-xl">
                 Finally understand the Quran — word by word, verse by verse.
               </p>
-              <div className="mt-7 w-full max-w-md">
+              {/* iOS is live; Android is in release prep. The badge row says so
+                  at a glance, and the form underneath now collects the Android
+                  notify list rather than a launch list for an app that launched. */}
+              <StoreButtons className="mt-7" />
+              <div className="mt-6 w-full max-w-md">
                 <WaitlistForm />
                 <p className="mt-5 text-sm text-muted">
                   Already love what we&apos;re building?{" "}
@@ -306,10 +311,12 @@ export default function HomePage() {
       {/* Sticky bottom CTA — mobile only */}
       <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-background border-t border-border sm:hidden flex gap-2">
         <a
-          href="#top"
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 py-3 rounded-xl bg-foreground text-background font-semibold flex items-center justify-center text-sm"
         >
-          Notify me
+          Get it on the App Store
         </a>
         <Link
           href="/support"
