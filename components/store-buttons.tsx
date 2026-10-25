@@ -4,6 +4,9 @@
 // The ayah share pages import the same URL so a change here changes everywhere.
 
 export const APP_STORE_URL = "https://apps.apple.com/app/id6767471815";
+// Flip to true the day the Play listing is public: fahimna.app/get then sends
+// Android to Google Play instead of the "notify me" signup on the home page.
+export const ANDROID_LIVE = false;
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.fahimna.quran";
 
 function AppleLogo({ className = "" }: { className?: string }) {

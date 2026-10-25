@@ -140,7 +140,7 @@ export default function HomePage() {
                   at a glance, and the form underneath now collects the Android
                   notify list rather than a launch list for an app that launched. */}
               <StoreButtons className="mt-7" />
-              <div className="mt-6 w-full max-w-md">
+              <div id="android" className="mt-6 w-full max-w-md scroll-mt-6">
                 <WaitlistForm />
                 <p className="mt-5 text-sm text-muted">
                   Already love what we&apos;re building?{" "}
