@@ -4,6 +4,7 @@
 // The ayah share pages import the same URL so a change here changes everywhere.
 
 export const APP_STORE_URL = "https://apps.apple.com/app/id6767471815";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.fahimna.quran";
 
 function AppleLogo({ className = "" }: { className?: string }) {
   return (
