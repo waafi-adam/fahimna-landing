@@ -1,4 +1,4 @@
-import { APP_STORE_URL, PLAY_STORE_URL } from "@/components/store-buttons";
+import { ANDROID_LIVE, APP_STORE_URL, PLAY_STORE_URL } from "@/components/store-buttons";
 
 // fahimna.app/get — the one link for social bios and posts. Phones go
 // straight to their store; everything else (desktop, unknown) gets the
@@ -10,7 +10,8 @@ export function GET(req: Request) {
 
   let target = "https://fahimna.app/";
   if (/android/i.test(ua)) {
-    target = PLAY_STORE_URL;
+    // Until Android is on Play, its visitors land on the Android signup.
+    target = ANDROID_LIVE ? PLAY_STORE_URL : "https://fahimna.app/#android";
   } else if (/iphone|ipad|ipod/i.test(ua)) {
     target = APP_STORE_URL;
   }
