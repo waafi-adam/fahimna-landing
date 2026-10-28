@@ -26,7 +26,7 @@ export async function joinWaitlist(
     console.error("Waitlist not configured: missing RESEND_API_KEY or RESEND_AUDIENCE_ID");
     return {
       status: "error",
-      message: "Waitlist isn't live yet — try again shortly.",
+      message: "Waitlist isn't live yet. Try again shortly.",
     };
   }
 
@@ -50,7 +50,7 @@ export async function joinWaitlist(
 
     return {
       status: "success",
-      message: "You're on the list. JazakAllah khayran — we'll be in touch.",
+      message: "You're on the list. JazakAllah khayran, we'll be in touch.",
     };
   } catch (err) {
     console.error("joinWaitlist threw:", err);

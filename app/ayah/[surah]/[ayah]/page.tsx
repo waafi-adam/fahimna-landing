@@ -124,9 +124,9 @@ type PageProps = {
 
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const data = await loadPage(await params, await searchParams);
-  if (!data) return { title: "Ayah not found — Fahimna Quran" };
+  if (!data) return { title: "Ayah not found | Fahimna Quran" };
 
-  const title = `${data.chapter.nameSimple} ${data.reference} — Fahimna Quran`;
+  const title = `${data.chapter.nameSimple} ${data.reference} | Fahimna Quran`;
   const full = data.verses.map((v) => v.translation).join(" ");
   const description = full.length > 150 ? `${full.slice(0, 150).trimEnd()}…` : full;
   // Canonical lives on the product host: quran.fahimna.app/2/255.
@@ -203,7 +203,7 @@ export default async function AyahPage({ params, searchParams }: PageProps) {
               Read {verses.length === 1 ? "this ayah" : "these ayahs"} word by word in Fahimna Quran
             </h2>
             <p className="mt-2 text-muted">
-              Tap any word for its meaning, root, and grammar — and save the ones you&apos;re learning.
+              Tap any word for its meaning, root and grammar, and save the ones you&apos;re learning.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
