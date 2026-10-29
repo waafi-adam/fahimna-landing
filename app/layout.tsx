@@ -17,7 +17,7 @@ const uthmanicHafs = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fahimna.app"),
-  title: "Fahimna — Understand the Quran, word by word",
+  title: "Fahimna: Understand the Quran, word by word",
   description:
     "Fahimna is Arabic for “we understood.” A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "tafsir",
   ],
   openGraph: {
-    title: "Fahimna — Understand the Quran, word by word",
+    title: "Fahimna: Understand the Quran, word by word",
     description:
       "A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
     url: "https://fahimna.app",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fahimna — Understand the Quran, word by word",
+    title: "Fahimna: Understand the Quran, word by word",
     description:
       "A Quran learning app with word-by-word translation, multiple reading layouts, and spaced-repetition flashcards.",
     images: ["/og-image.png"],

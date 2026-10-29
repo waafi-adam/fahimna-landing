@@ -63,7 +63,7 @@ export const RATINGS: RatingDef[] = [
     bgDark: "#0F2D1A",
     fg: "#34C759",
     explanation:
-      "4 days. Easy cards grow fast — next time it could be 2 weeks, then a month.",
+      "4 days. Easy cards grow fast: next time it could be 2 weeks, then a month.",
   },
 ];
 
@@ -90,7 +90,7 @@ export const SLIDES: SlideMeta[] = [
   {
     key: "flashcard",
     title: "Save and review",
-    body: "Try the flashcard — pick how well you knew it. Each Good or Easy stretches the gap before the card returns.",
+    body: "Try the flashcard: pick how well you knew it. Each Good or Easy stretches the gap before the card returns.",
   },
   {
     key: "dashboard",

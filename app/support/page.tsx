@@ -59,7 +59,7 @@ export default function SupportPage() {
               Support Fahimna
             </h1>
             <p className="mt-4 text-base sm:text-xl text-muted max-w-xl">
-              Back the mission to help every Muslim finally understand the Quran — word by word, verse by verse.
+              Back the mission to help every Muslim finally understand the Quran, word by word and verse by verse.
             </p>
             <a
               href={BMC_URL}
@@ -80,13 +80,13 @@ export default function SupportPage() {
               WHY SUPPORT FAHIMNA
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8">
-              Your support keeps Fahimna growing — with intention.
+              Your support keeps Fahimna growing, with intention.
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-muted mb-4">
-              Support means new features get built on a steady, planned roadmap instead of in stolen moments — and the app stays maintained as more Muslims rely on it.
+              Support means new features get built on a steady, planned roadmap instead of in stolen moments, and the app stays maintained as more Muslims rely on it.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-muted">
-              In the future, monthly supporters may unlock exclusive AI-powered features — comprehension checks, deeper analysis, conversational practice — things that cost real money to run for every user. The heart of Fahimna stays open to every Muslim, with a limited daily quota for everyone.
+              It funds what comes next: structured grammar lessons, learning to read the Arabic letters, and AI that answers your questions about each lesson. AI costs real money to run for every user, so supporters help keep it within reach. The Quran itself, with its translations, tafsir and grammar, stays free for every Muslim.
             </p>
           </div>
         </section>
@@ -105,10 +105,10 @@ export default function SupportPage() {
                 صَدَقَةٌ جَارِيَةٌ
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-muted mb-4">
-                The Prophet ﷺ said: &ldquo;When a person dies, their deeds come to an end except for three — ongoing charity, knowledge that benefits others, or a righteous child who prays for them.&rdquo;
+                The Prophet ﷺ said: &ldquo;When a person dies, their deeds come to an end except for three: ongoing charity, knowledge that benefits others, or a righteous child who prays for them.&rdquo;
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-muted">
-                Fahimna is knowledge that benefits others. Every Muslim who opens it and finally understands an ayah of the Quran — your support is woven into that. Your share of the reward keeps growing, long after this life.
+                Fahimna is knowledge that benefits others. Every Muslim who opens it and finally understands an ayah of the Quran, your support is woven into that. Your share of the reward keeps growing, long after this life.
               </p>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function SupportPage() {
               Ready to back Fahimna?
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-muted mb-8">
-              Monthly or one-time — every contribution keeps the roadmap moving forward.
+              Monthly or one-time, every contribution keeps the roadmap moving forward.
             </p>
             <a
               href={BMC_URL}
